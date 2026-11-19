@@ -6,10 +6,10 @@ from pydantic_ai.mcp import load_mcp_toolsets
 
 load_dotenv()
 mcp_toolset = load_mcp_toolsets("mcp.json")
-agent = Agent(model="openrouter:openrouter/free",toolsets=mcp_toolset)
+toolsets = [ts.defer_loading() for ts in mcp_toolset]
+agent = Agent(model="openrouter:openrouter/free", toolsets=toolsets)
 
 
 if __name__ == "__main__":
     web = agent.to_web()
     uvicorn.run(web)
-
