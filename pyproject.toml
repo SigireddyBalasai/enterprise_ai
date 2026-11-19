@@ -7,7 +7,12 @@ authors = [
     { name = "balasai sigireddy", email = "balasaisigireddy@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "pydantic-ai>=2.71.0",
+    "pydantic-ai-slim[web]>=2.71.0",
+    "pydantic-settings>=2.16.3",
+    "python-dotenv>=1.2.4",
+]
 
 [project.scripts]
 agent = "agent:main"
