@@ -8,6 +8,7 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "better-auth-client",
     "pydantic-ai>=2.71.0",
     "pydantic-ai-slim[web]>=2.71.0",
     "pydantic-settings>=2.16.3",
@@ -25,3 +26,6 @@ build-backend = "uv_build"
 dev = [
     "ruff>=0.17.6",
 ]
+
+[tool.uv.sources]
+better-auth-client = { path = "../better_auth_client" }
